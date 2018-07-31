@@ -17,6 +17,7 @@
         }
         else {
             $scope.class1 = true;
+            //$scope.messagestyle={'color':'red'}
             $scope.menuMessage = "Please enter data first";
         }
       };
