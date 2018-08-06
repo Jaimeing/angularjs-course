@@ -1,0 +1,8 @@
+<ul>
+  <li ng-repeat="item in ctrl.found">
+    <span class="itemDesc">{{ item.menu_item }} - {{ item.description }}</span>
+    <span class="itemButton">
+      <button class="btn btn-primary" ng-click="ctrl.onRemove({index: $index});">Don't want this one!</button>
+    </span>
+  </li>
+</ul>
