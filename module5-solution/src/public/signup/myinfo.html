@@ -1,0 +1,58 @@
+<div class="container" ng-if="!myInfoCtrl.savedInfo">
+  <h2 id="menu-categories-title" class="text-center">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </h2>
+</div>
+
+<div class="container" ng-if="myInfoCtrl.savedInfo">
+  <h2 id="menu-categories-title" class="text-center">
+    Registered Info
+  </h2>
+  <ul>
+    <li>
+      <span class="itemDesc">First Name: </span>
+      <span class="itemButton">
+        {{ myInfoCtrl.user.firstName }}
+      </span>
+    </li>
+    <li>
+      <span class="itemDesc">Last Name: </span>
+      <span class="itemButton">
+        {{ myInfoCtrl.user.lastName }}
+      </span>
+    </li>
+    <li>
+      <span class="itemDesc">Email: </span>
+      <span class="itemButton">
+        {{ myInfoCtrl.user.email }}
+      </span>
+    </li>
+    <li>
+      <span class="itemDesc">Phone number: </span>
+      <span class="itemButton">
+        {{ myInfoCtrl.user.phoneNumber }}
+      </span>
+    </li>
+  </ul>
+
+  <h2 id="menu-categories-title" class="text-center">
+    Favorite Dish
+  </h2>
+  <br>
+  <div class="menu-item-tile col-md-6">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="menu-item-photo">
+          <div>{{myInfoCtrl.favoriteDish.short_name}}</div>
+          <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.favoriteDish.short_name}}.jpg" alt="{{myInfoCtrl.favoriteDish.name}}">
+        </div>
+        <div class="menu-item-price">{{myInfoCtrl.favoriteDish.price_small | currency}}<span> {{myInfoCtrl.favoriteDish.small_portion_name}}</span> {{myInfoCtrl.favoriteDish.price_large | currency}} <span>{{myInfoCtrl.favoriteDish.large_portion_name}}</span></div>
+      </div>
+      <div class="menu-item-description col-sm-7">
+        <h3 class="menu-item-title">{{myInfoCtrl.favoriteDish.name}}</h3>
+        <p class="menu-item-details">{{myInfoCtrl.favoriteDish.description}}</p>
+      </div>
+    </div>
+    <hr class="visible-xs">
+  </div>
+</div>

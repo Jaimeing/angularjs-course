@@ -1,0 +1,66 @@
+<div class="container">
+  <h1>Newsletter Sign Up</h1>
+  <form name='regForm' novalidate>
+    <input type="text" name="firstName" class="signUpStyles" placeholder="First Name"
+      ng-model="signUpCtrl.user.firstName"
+      required
+      minlength="2"
+      ng-maxlength="30">
+    <span
+      ng-if="(regForm.firstName.$error.minlength || regForm.firstName.$error.required) && regForm.firstName.$touched">
+      First name must be at least 2 characters long
+    </span>
+      <span ng-if="regForm.firstName.$error.maxlength && regForm.firstName.$touched">
+        First name must not be longer than 30 characters
+    </span>
+    <br>
+
+    <input type="text" name="lastName" class="signUpStyles" placeholder="Last Name"
+      ng-model="signUpCtrl.user.lastName"
+      required
+      minlength="2"
+      ng-maxlength="30">
+    <span
+      ng-if="(regForm.lastName.$error.minlength || regForm.lastName.$error.required) && regForm.lastName.$touched">
+      Last name must be at least 2 characters long
+    </span>
+    <span ng-if="regForm.lastName.$error.maxlength && regForm.lastName.$touched">
+      Last name must not be longer than 30 characters
+    </span>
+    <br>
+
+    <input type="email" name="email" class="signUpStyles" placeholder="Email"
+      ng-model="signUpCtrl.user.email" required>
+    <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+      Must be a valid email address: handle@domain format
+    </span>
+    <br>
+
+    <input type="text" name="phoneNumber" class="signUpStyles"
+      placeholder="Phone Number" ng-model="signUpCtrl.user.phoneNumber"
+      pattern="\d{6,}" required>
+    <span ng-if="regForm.phoneNumber.$invalid && regForm.phoneNumber.$touched">
+      Phone number must be at least 6 digits long
+    </span>
+    <br>
+
+    <input type="text" name="favoriteDish" size="31" class="signUpStyles"
+      placeholder="Menu Number of Your Favorite Dish " ng-model="signUpCtrl.user.favoriteDish"
+      required>
+    <span ng-if="regForm.favoriteDish.$error.required && regForm.favoriteDish.$touched">
+      Favorite dish is required
+    </span>
+    <br>
+
+    <button ng-disabled="regForm.$invalid" ng-click="signUpCtrl.submit()" >
+      Submit
+    </button>
+
+    <!-- <div style="margin-top: 10px;">
+      Form valid? {{ regForm.$valid }}
+    </div>
+
+    <pre>{{signUpCtrl.user}}</pre> -->
+
+  </form>
+</div>

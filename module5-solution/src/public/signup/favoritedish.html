@@ -1,0 +1,32 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">
+    Favorite Dish
+  </h2>
+  <br>
+  <div class="text-center" ng-if="!favDishCtrl.favoriteDish">
+    No such menu number exists
+  </div>
+  <!-- <div class="menu-item-tile col-md-6" ng-if="favDishCtrl.favoriteDish">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="menu-item-photo">
+          <div>{{favDishCtrl.favoriteDish.short_name}}</div>
+          <img class="img-responsive" width="250" height="150" ng-src="{{favDishCtrl.basePath}}/images/{{favDishCtrl.favoriteDish.short_name}}.jpg" alt="{{favDishCtrl.favoriteDish.name}}">
+        </div>
+        <div class="menu-item-price">{{favDishCtrl.favoriteDish.price_small | currency}}<span> {{favDishCtrl.favoriteDish.small_portion_name}}</span> {{favDishCtrl.favoriteDish.price_large | currency}} <span>{{favDishCtrl.favoriteDish.large_portion_name}}</span></div>
+      </div>
+      <div class="menu-item-description col-sm-7">
+        <h3 class="menu-item-title">{{favDishCtrl.favoriteDish.name}}</h3>
+        <p class="menu-item-details">{{favDishCtrl.favoriteDish.description}}</p>
+      </div>
+    </div>
+    <hr class="visible-xs">
+  </div> -->
+  <div ng-if="favDishCtrl.favoriteDish">
+    <p>Your selected favorite dish is</p>
+    <p><span style="font-weight:bold;">{{favDishCtrl.favoriteDish.name}}</span></p>
+    <p>{{favDishCtrl.favoriteDish.description}}</p>
+    <br>
+    <p style="font-weight:bold;">Your information has been saved</p>
+  </div>
+</div>
